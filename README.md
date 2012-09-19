@@ -1,6 +1,6 @@
 # Ocelots
 
-TODO: Write a gem description
+Library and command line wrapper for ocelots api.
 
 ## Installation
 
@@ -18,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Set environment variable AUTH_TOKEN with your auth token from ocelots.
+
+Override the default url (http://ocelots.herokuapp.com) with your own instance by setting the OCELOTS_URL environment variable.
+
+You should now be ready to roll:
+
+    ocelots phone user@mail.com
 
 ## Contributing
 

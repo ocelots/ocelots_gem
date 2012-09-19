@@ -4,12 +4,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "ocelots"
-  gem.version       = '0.1.0'
+  gem.version       = '0.0.1'
   gem.authors       = ["Mark Ryall"]
   gem.email         = ["mark@ryall.name"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Command line wrapper for ocelots api}
+  gem.homepage      = "http://github.com/ocelots/ocelots_gem"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

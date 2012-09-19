@@ -13,7 +13,7 @@ module Ocelots::Cli
   end
 private
   def request command
-    HTTParty.get "#{base_url}/api/#{command}?auth_token=#{ENV['AUTH_KEY']}"
+    HTTParty.get "#{base_url}/api/#{command}?auth_token=#{ENV['AUTH_TOKEN']}"
   end
 
   def base_url
