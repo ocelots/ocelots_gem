@@ -1,5 +1,4 @@
-require "ocelots/version"
-
 module Ocelots
-  # Your code goes here...
 end
+
+require 'ocelots/cli'
