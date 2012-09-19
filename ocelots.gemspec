@@ -8,6 +8,10 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Mark Ryall"]
   gem.email         = ["mark@ryall.name"]
   gem.description   = %q{Command line wrapper for ocelots api}
+  gem.summary       = <<-EOF
+  This gem encapsulates usage of the ocelots api and provides a command line
+  interface.
+  EOF
   gem.homepage      = "http://github.com/ocelots/ocelots_gem"
 
   gem.files         = `git ls-files`.split($/)
