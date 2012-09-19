@@ -4,4 +4,6 @@ $: << File.dirname(__FILE__)+'/../lib'
 
 require 'ocelots'
 
-Ocelots::Cli.execute *ARGV
+include Ocelots::Cli
+
+execute *ARGV
