@@ -26,6 +26,14 @@ You should now be ready to roll:
 
     ocelots phone user@mail.com
 
+You can also run an irc bot that will answer basic queries in a channel:
+
+    ocelots_bot 'irc.freenode.org' '#channel'
+
+At this stage, the bot will respond to a message to look up a phone number:
+
+    phone for user@mail.com
+
 ## Contributing
 
 1. Fork it

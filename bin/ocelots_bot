@@ -2,8 +2,8 @@
 
 $: << File.dirname(__FILE__)+'/../lib'
 
-require 'ocelots/cli'
+require 'ocelots/bot'
 
-include Ocelots::Cli
+include Ocelots::Bot
 
 execute *ARGV
