@@ -28,7 +28,7 @@ You should now be ready to roll:
 
 You can also run an irc bot that will answer basic queries in a channel:
 
-    ocelots_bot 'irc.freenode.org' '#channel'
+    ocelots_bot ocelots irc.freenode.org 6667 '#channel'
 
 At this stage, the bot will respond to a message to look up a phone number:
 

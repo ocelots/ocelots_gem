@@ -7,17 +7,19 @@ module Ocelots::Bot
   def execute *args
     bot = Cinch::Bot.new do
         configure do |c|
+        c.nick = args.shift
         c.server = args.shift
+        c.port = args.shift.to_i
         c.channels = args
-      end
-
-      on :message, "hello" do |m|
-        m.reply "Hello, #{m.user.nick}"
       end
 
       on :message, /^phone for (.+)$/ do |m, email|
         response = request_profile email
-        m.reply response['phone'] if response['phone']
+        if response['phone']
+          m.reply "phone for #{email} is #{response['phone']}"
+        else
+          m.reply "couldn't find a phone number for #{email} sorry"
+        end
       end
     end
     bot.start
