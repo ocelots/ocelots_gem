@@ -18,16 +18,22 @@ module Ocelots::Cli
   end
 
   def antechamber team_slug
-    from = 0
-    while true
-      messages = request_antechamber team_slug, from
-      messages.reverse.each do |message|
-        from = message['id']
-        person = message['person']
-        ts = Time.at message['timestamp'].to_i
-        puts "#{ts.strftime('%d/%m %H:%M:%S')} #{person['full_name']}: #{message['content']}"
+    Thread.new do
+      from = 0
+      loop do
+        messages = request_antechamber team_slug, from
+        messages.reverse.each do |message|
+          from = message['id']
+          person = message['person']
+          ts = Time.at message['timestamp'].to_i
+          puts "#{ts.strftime('%d/%m %H:%M:%S')} #{person['full_name']}: #{message['content']}"
+        end
+        sleep 5
       end
-      sleep 15
+    end
+    loop do
+      message = $stdin.gets
+      post_antechamber team_slug, message
     end
   end
 private
