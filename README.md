@@ -24,7 +24,19 @@ Override the default url (http://ocelots.herokuapp.com) with your own instance b
 
 You should now be ready to roll:
 
-    ocelots phone user@mail.com
+### Profile lookup
+
+    ocelots profile user@mail.com
+
+This command performs an immediate lookup of a user's profile by their email address.
+
+### Chat shell
+
+You can enter a very basic interactive antechamber (chat client) shell:
+
+    ocelots antechamber team_slug
+
+### IRC bot
 
 You can also run an irc bot that will answer basic queries in a channel:
 

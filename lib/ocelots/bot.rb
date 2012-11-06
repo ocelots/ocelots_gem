@@ -5,20 +5,22 @@ module Ocelots::Bot
   include Ocelots
 
   def execute *args
+    RiplWatir
     bot = Cinch::Bot.new do
-        configure do |c|
+      configure do |c|
         c.nick = args.shift
         c.server = args.shift
         c.port = args.shift.to_i
         c.channels = args
       end
 
-      on :message, /^phone for (.+)$/ do |m, email|
-        response = request_profile email
-        if response['phone']
-          m.reply "phone for #{email} is #{response['phone']}"
+      on :message, /^phone for (.+)$/ do |m, text|
+        visit_page(:gab).search text
+        phone = on_page(:gab).phone
+        if phone
+          m.reply "phone for #{text} is #{phone}"
         else
-          m.reply "couldn't find a phone number for #{email} sorry"
+          m.reply "couldn't find a phone number for #{text} sorry"
         end
       end
     end
