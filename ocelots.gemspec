@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "ocelots"
-  gem.version       = '0.0.3'
+  gem.version       = '0.0.4'
   gem.authors       = ["Mark Ryall"]
   gem.email         = ["mark@ryall.name"]
   gem.description   = %q{Command line wrapper for ocelots api}

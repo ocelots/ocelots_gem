@@ -22,7 +22,7 @@ module Ocelots::Cli
       from = 0
       loop do
         messages = request_antechamber team_slug, from
-        messages.reverse.each do |message|
+        messages.each do |message|
           from = message['id']
           person = message['person']
           ts = Time.at message['timestamp'].to_i
